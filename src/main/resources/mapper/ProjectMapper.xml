@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiuyescm.ams.mapper.ProjectMapper">
+
+	<select id="findAllProjects" resultType="com.jiuyescm.ams.entity.ProjectEntity">
+        <![CDATA[
+            select * from ams_project;
+        ]]>
+	</select>
+
+	<insert id="createProject" parameterType="com.jiuyescm.ams.entity.ProjectEntity"
+		useGeneratedKeys="true" keyProperty="id">
+       <![CDATA[
+            insert into ams_project(id, name, description)
+            values (#{id}, #{name}, #{description})
+       ]]>
+	</insert>
+
+</mapper>
